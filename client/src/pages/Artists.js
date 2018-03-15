@@ -20,7 +20,7 @@ const Artists = () => {
             <div class="col xs"><p>
             Bio: As a young caveman, Sam would often anger his parents with his cave drawings. Not
             so much the actual paintings but that he used his personal bodily fluids for the paintings. But once they
-            dried and the smell went away, they could see the gifts that Sam possessed. 
+            dried and the smell went away, they could see the gifts that Sam possessed.
             </p>
             </div>
             </div>
@@ -42,7 +42,6 @@ const Artists = () => {
             </p>
             </div>
             </div>
-<<<<<<< HEAD
             <div class="row">
             <div class="col xs">
             <h3>Leonardo Di Caveman</h3>
@@ -79,11 +78,6 @@ const Artists = () => {
             </p>
             </div>
             </div>
-
-
-
-=======
->>>>>>> c4a40e309d4a71f17465efc5141ff7dd4eb1a35a
         </div>
     )
 }
