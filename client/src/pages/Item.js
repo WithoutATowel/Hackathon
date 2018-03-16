@@ -1,11 +1,12 @@
 import React from 'react';
-
-let location = window.location.href;
-console.log('location: ' + location);
-let index = parseInt(location.substr(27)) - 1;
-console.log('index: ' + index);
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 const Item = (props) => {
+    let index = props.index;
     return (
         <div className='container'>
             <div className="row">
@@ -16,7 +17,7 @@ const Item = (props) => {
                     <h1>{props.allArt[index].name}</h1>
                     <h3>by {props.allArt[index].artist}</h3>
                     <h2>Price: {props.allArt[index].price}</h2>
-                    <button className='btn btn-primary'>Add to Cart</button>
+                    <button className='btn btn-primary' onClick={ (e) => { props.onAddToCart(e, index) } }>Add to Cart</button>
                 </div>
             </div>
             <div className="row">
