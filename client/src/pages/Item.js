@@ -85,7 +85,7 @@ const Item = (props) => {
                     </div>
                     <div className='col-md-7'>
                         <h4>About the artist</h4>
-                        <p>Duis cursus nec libero in efficitur. Nunc mauris lacus, lobortis ac quam sed, commodo cursus odio. Morbi consequat a est id viverra. Nunc mattis mauris quis felis feugiat varius. Nam nec neque a erat convallis pretium eu eu urna. In hac habitasse platea dictumst. Pellentesque metus dui, iaculis ac efficitur eu, fringilla at nisl. Nulla facilisi. Praesent nec eros id diam accumsan varius.</p>
+                        <p>{props.allArt[index].about}</p>
                     </div>
                 </div>
             </div>
