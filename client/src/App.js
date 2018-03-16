@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Home from './pages/Home';
-import Favorites from './pages/Favorites';
 import Art from './pages/Art';
 import Artists from './pages/Artists';
 import Cart from './pages/Cart';
@@ -16,7 +15,7 @@ const allArt = [{
         name: 'Antelope 1',
         artist: 'Frida Kavelo',
         price: '$120,000',
-        fileName: 'antelope1.jp',
+        fileName: 'antelope1.jpg',
         id: 1
     },{
         name: 'Beasts',
@@ -94,6 +93,7 @@ class App extends Component {
             cart: []
         }
         this.handleAddToCart = this.handleAddToCart.bind(this);
+        this.handleCheckout = this.handleCheckout.bind(this);
     }
 
     handleAddToCart(e, index) {
@@ -104,21 +104,20 @@ class App extends Component {
         });
     }
 
+    handleCheckout() {
+        this.setState({
+            cart: []
+        });
+    }
+
     render() {
         return (
             <Router>
                 <div>
-                    <nav>
-                        <Link to="/">Home</Link>
-                        <Link to="/art">Art</Link>
-                        <Link to="/artists">Artists</Link>
-                        <Link to="/cart">Cart</Link>
-                    </nav>
                     <Route exact path="/" component={Home} />
                     <Route path="/art" component={ () => <Art allArt={allArt} /> } />
                     <Route path="/artists" component={Artists} />
-                    <Route path="/favorites" component={Favorites} />
-                    <Route path="/cart" component={ () => <Cart cartArt={this.state.cart} /> } />
+                    <Route path="/cart" component={ () => <Cart cartArt={this.state.cart} onCheckout={this.handleCheckout} /> } />
                     <Route path="/item/1" component={ () => <Item allArt={allArt} index={0} onAddToCart={this.handleAddToCart} /> } />
                     <Route path="/item/2" component={ () => <Item allArt={allArt} index={1} onAddToCart={this.handleAddToCart} /> } />
                     <Route path="/item/3" component={ () => <Item allArt={allArt} index={2} onAddToCart={this.handleAddToCart} /> } />

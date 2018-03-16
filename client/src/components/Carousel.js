@@ -2,7 +2,7 @@ import React from 'react';
 
 const Carousel = props => {
     return (
-        <div className="container">
+        <div className="container carousel">
             <div id="myCarousel" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" className="active"></li>

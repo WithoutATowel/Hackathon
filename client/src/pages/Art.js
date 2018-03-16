@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ArtPiece from '../components/ArtPiece';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 class Art extends Component {
     render () {
@@ -10,10 +12,14 @@ class Art extends Component {
         });
 
         return(
-        <div className='container'>
-            <h1>Available Pieces</h1>
-            {art}
-        </div>
+            <div className="main art">
+                <Nav />
+                <div className='container'>
+                    <h1 className='page-header'>Available Pieces</h1>
+                    {art}
+                </div>
+                <Footer />
+            </div>
         )
     }
 }

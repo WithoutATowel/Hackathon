@@ -61,12 +61,10 @@ const ArtPiece = (props) => {
     const href = "/item/" + props.piece.id;
     return (
         <div>
-            <Link to={href}>
-                <div className='list-item-container'>
-                    <img src={imageSrc} className='item-list-image' />
-                    <h3>"{props.piece.name}" by {props.piece.artist} for {props.piece.price}</h3>
-                </div>
-            </Link>
+            <div className='cart-list-item-container'>
+                <img src={imageSrc} className='item-list-image' />
+                <h3>"{props.piece.name}" by {props.piece.artist} for {props.piece.price}</h3>
+            </div>
         </div>
     )
 }
