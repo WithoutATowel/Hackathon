@@ -93,6 +93,15 @@ class App extends Component {
         this.state = {
             cart: []
         }
+        this.handleAddToCart = this.handleAddToCart.bind(this);
+    }
+
+    handleAddToCart(e, index) {
+        let cartCopy = Array.from(this.state.cart);
+        cartCopy.push(allArt[index]);
+        this.setState({
+            cart: cartCopy
+        });
     }
 
     render() {
@@ -109,8 +118,19 @@ class App extends Component {
                     <Route path="/art" component={ () => <Art allArt={allArt} /> } />
                     <Route path="/artists" component={Artists} />
                     <Route path="/favorites" component={Favorites} />
-                    <Route path="/cart" component={Cart} />
-                    <Route path="/item/:id" component={ () => <Item allArt={allArt} /> } />
+                    <Route path="/cart" component={ () => <Cart cartArt={this.state.cart} /> } />
+                    <Route path="/item/1" component={ () => <Item allArt={allArt} index={0} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/2" component={ () => <Item allArt={allArt} index={1} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/3" component={ () => <Item allArt={allArt} index={2} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/4" component={ () => <Item allArt={allArt} index={3} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/5" component={ () => <Item allArt={allArt} index={4} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/6" component={ () => <Item allArt={allArt} index={5} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/7" component={ () => <Item allArt={allArt} index={6} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/8" component={ () => <Item allArt={allArt} index={7} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/9" component={ () => <Item allArt={allArt} index={8} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/10" component={ () => <Item allArt={allArt} index={9} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/11" component={ () => <Item allArt={allArt} index={10} onAddToCart={this.handleAddToCart} /> } />
+                    <Route path="/item/12" component={ () => <Item allArt={allArt} index={11} onAddToCart={this.handleAddToCart} /> } />
                 </div>
             </Router>
         )
