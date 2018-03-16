@@ -46,3 +46,15 @@ nav a:active {
 #featured-artist {
   padding: 0 2.5%;
 }
+
+#homepic {
+  height: 20%;
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+}
+h1 {
+font-family: 'Gloria Hallelujah', cursive;
+text-align: center;
+
+}
